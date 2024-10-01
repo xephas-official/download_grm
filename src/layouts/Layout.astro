@@ -1,0 +1,60 @@
+---
+// import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import NavBar from "../components/NavBar.astro";
+import { coverImage, description, title } from "../scripts/constants";
+
+// variables
+// Access passed-in component props, like `<X title="Hello, World" />`
+const {
+  pageTitle = title,
+  header: headingText = title,
+  pageDescription = description,
+  pageCoverImage = coverImage,
+} = Astro.props;
+
+// if we are not on home page, add the code name to the page title
+// const newPageTitle = pageTitle + " | " + codeName;
+---
+
+<!doctype html>
+<html lang="en">
+  <Head
+    pageTitle={pageTitle}
+    pageCoverImage={pageCoverImage}
+    pageDescription={pageDescription}
+  />
+  <body class="font-mont bg-bg">
+    <!-- site layout -->
+    <section
+      class="flex flex-col min-h-screen justify-between h-full mb-8 space-y-8"
+    >
+      <!-- nav bar -->
+      <NavBar/>
+
+      <!-- Some spacing for visual alignment -->
+      <div class="mt-5 sm:mt-96"></div>
+      <!-- <div class="mt-5 sm:mt-96"></div> -->
+
+      <!-- main -->
+        <main class="px-4 mx-auto max-w-7xl md:px-10 h-str">
+          <div class="flex flex-col  mb-10 space-y-4 w-full h-full">
+          <!-- use slot, to insert page contents here-->
+          <slot />
+        </div>
+      </main>
+
+      <!-- footer -->
+      <!-- this is how we pass in booleans {true or false} -->
+      <Footer />
+
+      <!-- close -->
+    </section>
+    <!-- end layout -->
+
+    <!-- App Scripts -->
+	<!-- <script type="module" src="/scripts/app.js"></script> -->
+    <!-- Install PWA Script -->
+  </body>
+</html>

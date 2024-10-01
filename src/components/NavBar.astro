@@ -1,0 +1,44 @@
+---
+import { websiteUrl, codeName } from "../scripts/constants";
+---
+
+<!-- nav bar -->
+<nav
+  class="fixed top-0 left-0 right-0 p-4 text-navy flex justify-between bg-white/90"
+  id="main-nav"
+>
+  <!-- icon -->
+  <!-- align it to center when we are on a small device -->
+  <a
+    href=""
+    title=`GRM App`
+    class="flex items-center font-extrabold text-lg uppercase justify-center text-navy"
+  >
+    {codeName}
+  </a>
+
+  <!-- other action buttons -->
+  <div class="flex items-center justify-center space-x-4">
+    <!-- Pages -->
+
+    <a
+      href=`${websiteUrl}`
+      target="_blank"
+      class="inline-flex flex-row items-center px-4 transition-all py-2 text-xs font-bold text-center uppercase rounded-full text-white bg-blue hover:bg-navy hover:text-yellow hover:cursor-pointer"
+    >
+      Visit Website
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 -960 960 960"
+        class="fill-current ml-2"
+        width="24"
+      >
+        <path
+          d="M480-840q74 0 139.5 28.5T734-734q49 49 77.5 114.5T840-480q0 74-28.5 139.5T734-226q-49 49-114.5 77.5T480-120q-41 0-79-9t-76-26l61-61q23 8 46.5 12t47.5 4q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 24 4 47.5t12 46.5l-60 60q-18-36-27-74.5t-9-79.5q0-74 28.5-139.5T226-734q49-49 114.5-77.5T480-840Zm40 520v-144L176-120l-56-56 344-344H320v-80h280v280h-80Z"
+        ></path>
+      </svg>
+    </a>
+  </div>
+</nav>

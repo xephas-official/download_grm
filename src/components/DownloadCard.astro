@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  buttonText: string;
+  href: string;
+  fileType?: string;
+}
+
+// Access passed-in component props, like `<X title="Hello, World" />`
+// These are passed in with default parameters
+const { title, href, fileType, buttonText } = Astro.props;
+---
+
+<article
+  class=`flex flex-col w-full space-y-8 transition-all duration-500 align-center items-center justify-center text-center  p-8 duration-300 hover:cursor-pointer rounded-lg group bg-navy/5 text-navy hover:text-blue hover:bg-blue/10`
+>
+  <h1 class="text-4xl font-extrabold">{title}</h1>
+
+  <!-- use slot, to insert page contents here-->
+  <slot />
+
+  <a
+    href=`${href}`
+    target="_blank"
+    type=`${fileType}`
+    class="items-center px-6 transition-all underline py-4 text-xs font-bold text-center uppercase rounded-full text-white bg-navy group-hover:bg-blue hover:cursor-pointer"
+  >
+    {buttonText}
+  </a>
+</article>
