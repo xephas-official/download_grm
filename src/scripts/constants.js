@@ -47,4 +47,4 @@ export const appLayoutImage = "/images/app_layout.webp";
 export const playstoreLink = "https://play.google.com/store/apps/details?id=com.grm.gov.sl.grm_app";
 
 // windows link
-export const windowsLink = windowsFileLocation;
+export const windowsLink = "https://github.com/xephas-official/AppHosting/raw/refs/heads/main/grm/grm-app-x86_64.exe";
